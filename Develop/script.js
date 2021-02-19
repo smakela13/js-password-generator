@@ -48,7 +48,7 @@ function writePassword() {
   //prompt that stores user's response in variable
   var chosenLength = prompt("Please enter a password length between " + lowLength + " and " + upperLength + "."); 
   
-  /* if and while statements that make sure the chosen length is both a number 
+  /* if statement and while loop that make sure the chosen length is both a number 
   * and within the correct range of desired numbers and loops until user provides a valid response. */
   if (isNaN(chosenLength)) {
     chosenLength = -1;
@@ -67,14 +67,21 @@ function writePassword() {
   uppercase = confirm("Do you want uppercase letters?");
   numbers = confirm("Do you want numbers?");
   special = confirm("Do you want special characters?");
-  
-  // generate password function that stores the user's input
-  password = generatePassword(chosenLength, lowercase, uppercase, numbers, special);
-  // ties the generated password to the javascript
-  passwordText = document.querySelector("#password");
-  // displays the password on the HTML page
-  passwordText.value = password;
- 
+
+  /* if statement that informs the user if no character types are provided to rerun password generator
+  * else statment will generate the password and display to user 
+  * added break to align text nicely */
+  if (!(lowercase || uppercase || numbers || special)) {
+    alert("No characters types were provided. No password generated.\n" +
+          "Please run again.");      
+  } else {
+    // generate password function that stores the user's input
+    password = generatePassword(chosenLength, lowercase, uppercase, numbers, special);
+    // ties the generated password to the javascript
+    passwordText = document.querySelector("#password");
+    // displays the password on the HTML page
+    passwordText.value = password;
+  }
 }
 
 // Add event listener to generate button
