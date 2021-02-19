@@ -69,8 +69,8 @@ function writePassword() {
   special = confirm("Do you want special characters?");
 
   /* if statement that informs the user if no character types are provided to rerun password generator
-  * else statment will generate the password and display to user 
-  * added break to align text nicely */
+  * else statment will generate the password and display to user
+  * also added break to align text nicely */
   if (!(lowercase || uppercase || numbers || special)) {
     alert("No characters types were provided. No password generated.\n" +
           "Please run again.");      
