@@ -40,6 +40,11 @@ function writePassword() {
   var upperLength = 128;
   var chosenLength = prompt("Please enter a password length between " + lowLength + " and " + upperLength + ".");
 
+  if (chosenLength === true) {
+    var secondChosenLength = prompt("Please enter a proper password length between 8 and 128 characters:", "Enter character length here.");
+    if (secondChosenLength !== > )
+  }
+
   var lowercase = confirm("Do you want lowercase letters?");
 
   var uppercase = confirm("Do you want uppercase letters?");
