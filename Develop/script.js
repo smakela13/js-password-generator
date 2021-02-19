@@ -1,15 +1,19 @@
 // Assignment Code
+// ties the button to a javascript variable
 var generateBtn = document.querySelector("#generate");
 
-
-
 // Write password to the #password input
+// function that generates the password based on certain parameters
 function generatePassword(chosenLength, lowercase, uppercase, numbers, special) {
+  // initialize variables
   var lowerLetters = "abcdefghijklmnopqrstuvwxyz"; // lower letters
   var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // upper letters
   var numberSelection = "0123456789"; // numbers
   var specialCharacters = " !\"#$ %& '()*+,-./:;<=>?@[\\]^_`{|}~"; // special characters
-  var combined = "";
+  var combined = ""; // holder for the desired characters
+  var generatedPassword; // the generated password
+
+  // if statements to build the combined characters
   if (lowercase) {
     combined += lowerLetters;
   }
@@ -22,55 +26,55 @@ function generatePassword(chosenLength, lowercase, uppercase, numbers, special) 
   if (special) {
     combined += specialCharacters;
   }
-  
-  console.log(combined);
-  console.log(chosenLength);
-  
-  var generatedPassword = "";
+  // holder for the generated password
+  generatedPassword = ""; 
+  /* for loop to randomly generate the password using Math floor to round 
+  * the random number to a whole number to get the correct chosen length */
   for (var i = 0; i < chosenLength; i++) {
     generatedPassword += combined.charAt(Math.floor(Math.random() * combined.length));
   }
-  console.log(generatedPassword);
+  // returns the generated password
   return generatedPassword;
 }
-
+// function that writes the password and allows the prompts to be displayed
 function writePassword() {
+  // initialize variables
+  var lowLength = 8; // smallest character number
+  var upperLength = 128; // largest character number
+  // undefined variables for the confirm functions below
+  var lowercase, uppercase, numbers, special; 
+  // undefined variables for the generatePassword and querySelector functions below
+  var password, passwordText;
+  //prompt that stores user's response in variable
+  var chosenLength = prompt("Please enter a password length between " + lowLength + " and " + upperLength + "."); 
   
-  var lowLength = 8;
-  var upperLength = 128;
-  var chosenLength = prompt("Please enter a password length between " + lowLength + " and " + upperLength + ".");
-
-  while (chosenLength < lowLength || chosenLength > upperLength) {
-    alert("Please enter a valid number.") + chosenLength;
-    chosenLength = prompt("Please enter a proper password length between 8 and 128 characters:", "Enter character length here.");
+  /* if and while statements that make sure the chosen length is both a number 
+  * and within the correct range of desired numbers and loops until user provides a valid response. */
+  if (isNaN(chosenLength)) {
+    chosenLength = -1;
   }
+  while (chosenLength < lowLength || chosenLength > upperLength) {
+    alert("Please enter a valid number.") + chosenLength; // notifies user to provide a valid number
+    // prompts user to provide a proper password length again
+    chosenLength = prompt("Please enter a proper password length between 8 and 128 characters:",
+                          "Enter character length here.");
+    if (isNaN(chosenLength)) {
+      chosenLength = -1;
+    }
+  }
+  // confirm functions that ask the user to choose their password characters using true/false logic
+  lowercase = confirm("Do you want lowercase letters?");
+  uppercase = confirm("Do you want uppercase letters?");
+  numbers = confirm("Do you want numbers?");
+  special = confirm("Do you want special characters?");
   
-
-  console.log(chosenLength);
-
-  var lowercase = confirm("Do you want lowercase letters?");
-
-  var uppercase = confirm("Do you want uppercase letters?");
-
-  var numbers = confirm("Do you want numbers?");
-
-  var special = confirm("Do you want special characters?");
-
-
-
-
-  console.log(chosenLength);
-  console.log(lowercase);
-  console.log(uppercase);
-  console.log(numbers);
-  console.log(special);
-
-  var password = generatePassword(chosenLength, lowercase, uppercase, numbers, special);
-
-  // var passwordText = document.querySelector("#password");
-  //passwordText.value = password;
+  // generate password function that stores the user's input
+  password = generatePassword(chosenLength, lowercase, uppercase, numbers, special);
+  // ties the generated password to the javascript
+  passwordText = document.querySelector("#password");
+  // displays the password on the HTML page
+  passwordText.value = password;
  
-
 }
 
 // Add event listener to generate button
