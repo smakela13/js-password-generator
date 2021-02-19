@@ -36,6 +36,7 @@ function generatePassword(chosenLength, lowercase, uppercase, numbers, special) 
   // returns the generated password
   return generatedPassword;
 }
+
 // function that writes the password and allows the prompts to be displayed
 function writePassword() {
   // initialize variables
