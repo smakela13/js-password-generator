@@ -18,7 +18,7 @@ This application is written in JavaScript with HTML and CSS.
 
 ![Sarah Makela's Portfolio](./Assets/smakela-password-generator.png)
 
-Navigate to [Sarah Makela's Portfolio](https://smakela13.github.io/js-password-generator/index.html) and view the web page.
+Navigate to [Sarah Makela's Portfolio](https://smakela13.github.io/js-password-generator/Develop/index.html) and view the web page.
 
 ## Credits
 
