@@ -24,7 +24,7 @@ Navigate to [Sarah Makela's Portfolio](https://smakela13.github.io/js-password-g
 
 ## Credits
 
-Created by [Sarah Makela](github.com/smakela13).
+Created by [Sarah Makela](https://github.com/smakela13).
 
 ## License
 
