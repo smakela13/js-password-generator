@@ -78,10 +78,16 @@ function writePassword() {
   } else {
     // generate password function that stores the user's input
     password = generatePassword(chosenLength, lowercase, uppercase, numbers, special);
+    // alerts the user the password has been copied
+    alert("Password has been copied: " + password);
     // ties the generated password to the javascript
     passwordText = document.querySelector("#password");
     // displays the password on the HTML page
     passwordText.value = password;
+
+    // added function that selects password and copies password
+    passwordText.select();
+    document.execCommand("copy");
   }
 }
 
