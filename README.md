@@ -17,13 +17,13 @@ This application is written in JavaScript with HTML and CSS.
 
 ## Usage
 
-![Sarah Makela's Portfolio](./Assets/smakela-password-generator.png)
+![Soma Makela's Password Generator](./Assets/smakela-password-generator.png)
 
-Navigate to [Sarah Makela's Portfolio](https://smakela13.github.io/js-password-generator/Develop/index.html) and view the web page.
+Navigate to [Soma Makela's Password Generator](https://smakela13.github.io/js-password-generator/Develop/index.html) and view the web page.
 
 ## Credits
 
-Created by [Sarah Makela](https://github.com/smakela13).
+Created by [Soma Makela](https://github.com/smakela13).
 
 ## License
 
