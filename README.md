@@ -17,7 +17,7 @@ This application is written in JavaScript with HTML and CSS.
 
 ## Usage
 
-![Soma Makela's Password Generator](./Assets/smakela-password-generator.png)
+![Soma Makela's Password Generator](./assets/smakela-password-generator.png)
 
 Navigate to [Soma Makela's Password Generator](https://smakela13.github.io/js-password-generator/Develop/index.html) and view the web page.
 
